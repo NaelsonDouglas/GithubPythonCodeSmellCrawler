@@ -1,10 +1,14 @@
 from github import Github
-import git
+from git import Git
 from configparser import ConfigParser
+import os
+from shutil import rmtree
+from glob import glob
 configs = ConfigParser()
 configs.read('configs.ini')
 from tqdm import tqdm
 
+DEBUG = False
 class Crawler:
         def __init__(self):
                 self.gh  = Github(configs.get('github','token'))
@@ -12,6 +16,7 @@ class Crawler:
                 self.repos = iter(self.repos)
                 self.current_repo = ''
                 self.visited_repos = []
+                self.DUMPS_DIR = './dumps/'
 
 
         def list_repo_contents(self,repo):
@@ -36,11 +41,57 @@ class Crawler:
 
 
         def next(self):
-                repo = next(self.repos)
-                self.current_repo = repo.full_name
-                self.visited_repos.append(repo)
-                print(f'Current repository: {self.current_repo}')
-                result = self.list_repo_contents(repo)
+                try:
+                        if DEBUG:
+                                if self.current_repo == '':
+                                        repo = next(self.repos)
+                                        while repo.full_name != 'donnemartin/system-design-primer':
+                                                repo = next(self.repos)
+                                                print(repo.full_name)
+                        else:
+                                repo = next(self.repos)
+                except:
+                        repo = None
+                self.current_repo = repo
+                if repo != None:
+                        self.visited_repos.append(repo)
+                        print(f'Current repository: {self.current_repo}')
+                        result = repo.clone_url
+                else:
+                        result = None
                 return result
 
-c = Crawler()
+
+        def clear_directory(self):
+                filelist = glob(os.path.join(self.DUMPS_DIR, "*"))
+                for f in filelist:
+                        if os.path.isfile(f):
+                                os.remove(f)
+                        else:
+                                rmtree(f)
+
+
+        def clone_next(self):
+                repo = self.next()
+                repo_base_name = self.DUMPS_DIR+repo.split('/')[-1].split('.git')[0]
+                if repo != None:
+                        if not DEBUG:
+                                self.clear_directory()
+                        if not os.path.isdir(repo_base_name):
+                                Git(self.DUMPS_DIR).clone(repo)
+                        if self.current_repo._rawData['fork']:
+                                return self.clone_next()
+                        return self.current_repo
+
+        def list_files(self,extension='py'):
+                files_list = []
+                for root, directories, files in os.walk(self.DUMPS_DIR):
+                        for name in files:
+                                if extension is None or name.endswith(extension):
+                                        files_list.append(os.path.join(root, name))
+                files_list.sort()
+                return files_list
+
+# c = Crawler()
+# c.clone_next()
+# c.list_files()
