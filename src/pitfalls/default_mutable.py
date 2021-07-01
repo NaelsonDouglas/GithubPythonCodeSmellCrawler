@@ -1,2 +1,2 @@
-def test(argument = []):
+def test(argument=[]):
     a.append(1)
