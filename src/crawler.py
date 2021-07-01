@@ -12,6 +12,7 @@ from tqdm import tqdm
 
 DEBUG = False
 
+blacklist = ('jackfrued/Python-100-Days','donnemartin/system-design-primer','vinta/awesome-python')
 
 class Crawler:
     def __init__(self):
@@ -22,7 +23,6 @@ class Crawler:
         self.visited_repos = []
         self.dumps_dir = pathlib.Path('dumps')
         self.git = Git(self.dumps_dir)
-        self.next()
 
     def list_repo_contents(self, repo):
         contents = repo.get_contents('')
@@ -48,12 +48,14 @@ class Crawler:
     
     def next_repo_name(self):
         next_uri = self.next()
-        repo_name = next_uri.split('/')[-1].split('.git')[0]
+        repo_name = next_uri.split('/')[-1].split('.git')[0]        
         return repo_name
 
     def next(self):
         try:
             repo = next(self.repos)
+            if repo.full_name in blacklist:
+                return self.next()
         except:
             repo = None
         self.current_repo = repo

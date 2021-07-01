@@ -24,7 +24,6 @@ add_header = True
 first = True
 repo = None
 while repo is not None or first == True:
-    print('ok')
     repo = -1
     first = False
     crawler.next()
