@@ -19,7 +19,6 @@ class Crawler:
         self.repos = self.gh.search_repositories(query='language:python')
         self.repos = iter(self.repos)
         self.current_repo = ''
-        self.current_commit = ''
         self.visited_repos = []
         self.dumps_dir = pathlib.Path('dumps')
         self.git = Git(self.dumps_dir)
@@ -86,7 +85,6 @@ class Crawler:
             if not current_repo_path.exists():
                 print('starting clone')
                 self.git.clone(self.current_uri)
-                self.current_commit = pathlib.Path(current_repo_path,'.git','refs','heads','main').read_text().replace('\n','')
                 print('ended clone')
             if self.current_repo._rawData['fork']:
                 return self.clone_current()

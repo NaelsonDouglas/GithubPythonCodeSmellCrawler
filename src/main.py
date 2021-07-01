@@ -31,8 +31,8 @@ while repo is not None or first == True:
     output_path = pathlib.Path(outputs_dir,crawler.current_repo.name+'.json').absolute()
     if not output_path.exists():
         crawler.clone_current()
-        result = detect(dumps_dir)
+        result = detect(str(dumps_dir))
         df = pd.DataFrame(result)
-        df['commit'] = crawler.current_commit
+        df['commit'] = get_commit(str(crawler.get_current_repo_path()))
         df['repo'] = crawler.current_repo.full_name
         df.to_json(str(output_path))
