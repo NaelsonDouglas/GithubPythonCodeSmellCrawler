@@ -30,8 +30,14 @@ while repo is not None or first == True:
     output_path = pathlib.Path(outputs_dir,crawler.current_repo.name+'.json').absolute()
     if not output_path.exists():
         crawler.clone_current()
-        result = detect(str(dumps_dir))
+        commit = get_commit(str(crawler.get_current_repo_path()))
+        current_repo_dir = pathlib.Path(dumps_dir,crawler.current_repo.name).absolute()
+        delete_list = list(current_repo_dir.rglob('*'))
+        delete_list =  [i for i in delete_list if i.is_file() and not i.suffix == '.py']
+        for path in delete_list:
+            path.unlink()
+        result = detect(str(current_repo_dir))
         df = pd.DataFrame(result)
-        df['commit'] = get_commit(str(crawler.get_current_repo_path()))
+        df['commit'] = commit
         df['repo'] = crawler.current_repo.full_name
         df.to_json(str(output_path))

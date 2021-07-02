@@ -1,3 +1,4 @@
+import subprocess
 import pathlib
 from github import Github
 from git import Git
@@ -6,6 +7,7 @@ import os
 from shutil import rmtree
 from glob import glob
 
+
 configs = ConfigParser()
 configs.read('configs.ini')
 from tqdm import tqdm
@@ -13,6 +15,7 @@ from tqdm import tqdm
 DEBUG = False
 
 blacklist = ('jackfrued/Python-100-Days','donnemartin/system-design-primer','vinta/awesome-python')
+
 
 class Crawler:
     def __init__(self):
@@ -23,6 +26,11 @@ class Crawler:
         self.visited_repos = []
         self.dumps_dir = pathlib.Path('dumps')
         self.git = Git(self.dumps_dir)
+
+    def _make_clone_command(self, uri, repo_name):    
+        str_dumps_dir = str(self.dumps_dir)
+        clone_command = f'git clone --depth 1 --filter=blob:limit=5m {uri} {str_dumps_dir}/{repo_name}'
+        return clone_command
 
     def list_repo_contents(self, repo):
         contents = repo.get_contents('')
@@ -85,9 +93,10 @@ class Crawler:
             if not DEBUG:
                 self.clear_directory()
             if not current_repo_path.exists():
-                print('starting clone')
-                self.git.clone(self.current_uri)
-                print('ended clone')
+                repo_name = self.current_repo.name
+                clone_cmd = self._make_clone_command(self.current_uri,repo_name)
+                process = subprocess.run(clone_cmd.split(), stdout=subprocess.PIPE)
+                #self.git.clone(self.current_uri)
             if self.current_repo._rawData['fork']:
                 return self.clone_current()
             return self.current_repo
@@ -96,7 +105,6 @@ class Crawler:
         files_list = [i for i in self.dumps_dir.rglob(f'*.{extension}')]
         files_list.sort()
         return files_list
-
 
 # c = Crawler()
 # c.clone_current()
