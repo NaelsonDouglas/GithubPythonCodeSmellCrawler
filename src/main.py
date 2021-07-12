@@ -7,7 +7,7 @@ from detector import detect
 from commit_getter import get_commit
 
 
-GET_NEW_DATA = True
+GET_NEW_DATA = False
 
 
 crawler = Crawler()
