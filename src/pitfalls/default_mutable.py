@@ -1,2 +1,2 @@
 def test(argument=[]):
-    a.append(1)
+    argument.append(1)
