@@ -3,6 +3,7 @@ from rich import print
 import subprocess
 import pandas as pd
 import json
+import os
 
 
 my_redefined_options = {
@@ -21,14 +22,19 @@ def error_to_dict(e):
             'lnum' : e.lnum,
             'type' : e.type,
             'text' : e.text,
-            'filename' : e.filename,
+            'filename' : e.filename.replace('dumps/',''),
             'number' : e.number
         }
     return d
 
 def pylint_detect(my_path):
     command = f'pylint --output-format=json {my_path}/*.py > temp.json'
+    #command = f'find . -type f -wholename \'{my_path}/*.py\' | xargs pylint --output-format=json > temp.json'
+    current_path = os.getcwd()
+    os.chdir(my_path)
+    command = f'pylint --output-format=json * > {current_path}/temp.json'
     subprocess.run(command,shell=True)
+    os.chdir(current_path)
     with open('temp.json') as f:
         errors = json.load(f)
     df = pd.DataFrame(errors)
@@ -41,6 +47,7 @@ def pylint_detect(my_path):
                 )
     if len(df) > 0:
         df.type = df.type.apply(lambda x : x[0].upper())
+    df.filename = df.filename.apply(lambda x: x.replace('dumps/',''))
     return df
 
 

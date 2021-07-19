@@ -89,9 +89,7 @@ class Crawler:
 
     def clone_current(self):
         current_repo_path = self.get_current_repo_path()
-        if self.current_uri != None:
-            if not DEBUG:
-                self.clear_directory()
+        if self.current_uri != None:            
             if not current_repo_path.exists():
                 repo_name = self.current_repo.name
                 clone_cmd = self._make_clone_command(self.current_uri,repo_name)
