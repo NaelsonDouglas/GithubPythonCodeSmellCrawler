@@ -201,6 +201,7 @@ R1722,consider-using-sys-exit,0
 R1723,no-else-break,0
 R1724,no-else-continue,0
 R1725,super-with-arguments,1
+R1732,Consider-using-with,1
 C0102,blacklisted-name,
 C0103,invalid-name,1
 C0112,empty-docstring,0
