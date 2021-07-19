@@ -36,6 +36,7 @@ def make_pylint_df():
         df.loc[df.filename == file_name, 'lines_amount'] = amount_lines        
     df['commit'] = commit
     df['repo'] = crawler.current_repo.full_name
+    return df
     
 def delete_files(file_list):
     for path in delete_list:
