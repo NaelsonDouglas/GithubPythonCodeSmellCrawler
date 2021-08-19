@@ -8,7 +8,7 @@ from detector import pylint_detect
 from commit_getter import get_commit
 
 
-GET_NEW_DATA = True
+GET_NEW_DATA = False
 
 
 crawler = Crawler()
@@ -27,17 +27,21 @@ def add_meta(result_dict,commit, repo_name):
 def make_pylint_df():
     df = pylint_detect(str(current_repo_dir))
     df['lines_amount'] = 0
-    relevant_files = df.filename.unique()
-    for path in keep_list:
-        source_text = path.read_text()
-        amount_lines = 1 + len([char for char in source_text if char == '\n'])
-        file_name = str(path).split(str(dumps_dir.name)+'/')[-1]
-        file_name = file_name.replace(crawler.current_repo.name+'/','')
-        df.loc[df.filename == file_name, 'lines_amount'] = amount_lines        
-    df['commit'] = commit
-    df['repo'] = crawler.current_repo.full_name
+    if len(df) > 0:
+        relevant_files = df.filename.unique()
+        for path in keep_list:
+            try:
+                source_text = path.read_text()
+                amount_lines = 1 + len([char for char in source_text if char == '\n'])
+            except UnicodeDecodeError:
+                amount_lines = 0
+            file_name = str(path).split(str(dumps_dir.name)+'/')[-1]
+            file_name = file_name.replace(crawler.current_repo.name+'/','')
+            df.loc[df.filename == file_name, 'lines_amount'] = amount_lines
+        df['commit'] = commit
+        df['repo'] = crawler.current_repo.full_name
     return df
-    
+
 def delete_files(file_list):
     for path in delete_list:
         path.unlink()
@@ -73,9 +77,13 @@ if __name__ == '__main__':
                 current_repo_dir = pathlib.Path(dumps_dir,crawler.current_repo.name).absolute()
                 keep_list = create_keep_list(current_repo_dir)
                 delete_list = create_delete_list(current_repo_dir)
-                delete_files(delete_list)                
-                df = make_pylint_df()
-                df.to_json(str(output_path))
+                delete_files(delete_list)
+                try:
+                    df = make_pylint_df()
+                except json.decoder.JSONDecodeError:
+                    continue
+                if len(df) > 0:
+                    df.to_json(str(output_path))
 
     jsons = list(outputs_dir.glob('*.json'))
     jsons = list(map(lambda x: json.loads(x.read_text()), jsons))

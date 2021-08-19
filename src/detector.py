@@ -32,7 +32,8 @@ def pylint_detect(my_path):
     #command = f'find . -type f -wholename \'{my_path}/*.py\' | xargs pylint --output-format=json > temp.json'
     current_path = os.getcwd()
     os.chdir(my_path)
-    command = f'pylint --output-format=json * > {current_path}/temp.json'
+    codes = 'W0201,W0221,W0401,R0801,C1801,W0102,W0622,R0123,R0912,R1707,R1710,R1714,C0121,C0200,R1732'
+    command = f'pylint --output-format=json --disable=all --enable={codes} j=0 *.py > {current_path}/temp.json'
     subprocess.run(command,shell=True)
     os.chdir(current_path)
     with open('temp.json') as f:
@@ -47,7 +48,8 @@ def pylint_detect(my_path):
                 )
     if len(df) > 0:
         df.type = df.type.apply(lambda x : x[0].upper())
-    df.filename = df.filename.apply(lambda x: x.replace('dumps/',''))
+    if len(df) > 0:
+        df.filename = df.filename.apply(lambda x: x.replace('dumps/',''))
     return df
 
 
