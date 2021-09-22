@@ -9,3 +9,4 @@ def update_file(path, new_content):
     with open(path, 'a') as f:
         f.write(new_content)
         f.close()
+
