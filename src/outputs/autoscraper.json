@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":1},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":31},"commit":{"0":"973ba6abed840d16907a556bc0192e2bf4806c6d"},"repo":{"0":"alirezamika\/autoscraper"}}

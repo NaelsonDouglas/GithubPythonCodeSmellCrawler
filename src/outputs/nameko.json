@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":3},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":93},"commit":{"0":"0c739128ffffc3a342cd56eb59099a1ee5a4472c"},"repo":{"0":"nameko\/nameko"}}

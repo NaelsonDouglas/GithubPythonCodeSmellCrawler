@@ -1,0 +1,1 @@
+{"type":{"0":"R"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":7},"col":{"0":21},"filename":{"0":"setup.py"},"symbol":{"0":"consider-using-with"},"text":{"0":"Consider using 'with' for resource-allocating operations"},"number":{"0":"R1732"},"linter":{"0":"pylint"},"lines_amount":{"0":38},"commit":{"0":"35b3f1e40e87c221b7156300b3611518c1d37745"},"repo":{"0":"lebinh\/ngxtop"}}

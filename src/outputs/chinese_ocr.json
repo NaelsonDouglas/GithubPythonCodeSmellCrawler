@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"ocr"},"obj":{"0":""},"lnum":{"0":5},"col":{"0":0},"filename":{"0":"ocr.py"},"symbol":{"0":"wildcard-import"},"text":{"0":"Wildcard import math"},"number":{"0":"W0401"},"linter":{"0":"pylint"},"lines_amount":{"0":88},"commit":{"0":"9af64905f7e1a226d902feac5c0dfd64399ce6b2"},"repo":{"0":"YCG09\/chinese_ocr"}}

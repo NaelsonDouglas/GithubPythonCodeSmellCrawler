@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"conf"},"obj":{"0":""},"lnum":{"0":45},"col":{"0":0},"filename":{"0":"conf.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'copyright'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":317},"commit":{"0":"9b6262eed638dd2f5960fb959def6fe981b0b40c"},"repo":{"0":"yasoob\/intermediatePython"}}

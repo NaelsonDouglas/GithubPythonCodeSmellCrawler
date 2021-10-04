@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":12},"col":{"0":4},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'license'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":26},"commit":{"0":"d469f2f5e0a472be2c7d95ff90ed46e975810dc8"},"repo":{"0":"navdeep-G\/samplemod"}}
