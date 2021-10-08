@@ -6,28 +6,28 @@ from configparser import ConfigParser
 import os
 from shutil import rmtree
 from glob import glob
+import pandas as pd
 
 
 configs = ConfigParser()
 configs.read('configs.ini')
 from tqdm import tqdm
 
-DEBUG = False
+DEBUG = True
 
 blacklist = ('jackfrued/Python-100-Days','donnemartin/system-design-primer','vinta/awesome-python')
-
 
 class Crawler:
     def __init__(self):
         self.gh = Github(configs.get('github', 'token'))
-        self.repos = self.gh.search_repositories(query='language:python')
+        self.repos = self.gh.search_repositories(query='language:python', sort='stars', order='desc')
         self.repos = iter(self.repos)
         self.current_repo = ''
         self.visited_repos = []
         self.dumps_dir = pathlib.Path('dumps')
         self.git = Git(self.dumps_dir)
 
-    def _make_clone_command(self, uri, repo_name):    
+    def _make_clone_command(self, uri, repo_name):
         str_dumps_dir = str(self.dumps_dir)
         clone_command = f'git clone --depth 1 --filter=blob:limit=5m {uri} {str_dumps_dir}/{repo_name}'
         return clone_command
@@ -53,10 +53,10 @@ class Crawler:
             pbar.update(1)
         pbar.close()
         return result
-    
+
     def next_repo_name(self):
         next_uri = self.next()
-        repo_name = next_uri.split('/')[-1].split('.git')[0]        
+        repo_name = next_uri.split('/')[-1].split('.git')[0]
         return repo_name
 
     def next(self):
@@ -69,11 +69,11 @@ class Crawler:
         self.current_repo = repo
         if repo != None:
             self.visited_repos.append(repo)
-            print(f'Current repository: {self.current_repo}')
             result = repo.clone_url
         else:
             result = None
         self.current_uri = result
+        print(f'Current repository: {self.current_repo}\n')
         return result
 
     def clear_directory(self):

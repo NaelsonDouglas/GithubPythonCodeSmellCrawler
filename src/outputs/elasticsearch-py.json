@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"noxfile"},"obj":{"0":"format"},"lnum":{"0":57},"col":{"0":0},"filename":{"0":"noxfile.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'format'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":102},"commit":{"0":"59156763a158a35524b05c54cec1f72b4b505431"},"repo":{"0":"elastic\/elasticsearch-py"}}

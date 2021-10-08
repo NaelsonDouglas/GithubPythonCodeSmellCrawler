@@ -14,7 +14,8 @@ GET_NEW_DATA = True
 crawler = Crawler()
 outputs_dir = pathlib.Path('outputs').absolute()
 dumps_dir = crawler.dumps_dir.absolute()
-
+already_collected = pd.read_parquet('data.parquet')
+already_collected = list(already_collected.repo.unique())
 
 def load_output(file_path):
     with open(file_path) as f:
@@ -68,7 +69,10 @@ if __name__ == '__main__':
         while repo is not None or first == True:
             repo = -1
             first = False
-            crawler.next()
+            repo = crawler.next()
+            while repo is None or crawler.current_repo.full_name in already_collected:
+                repo = crawler.next()
+                print('skipping')
             output_path = pathlib.Path(outputs_dir,crawler.current_repo.name+'.json').absolute()
             if not output_path.exists():
                 crawler.clear_directory()
