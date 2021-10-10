@@ -15,7 +15,7 @@ from tqdm import tqdm
 
 DEBUG = True
 
-blacklist = ('jackfrued/Python-100-Days','donnemartin/system-design-primer','vinta/awesome-python')
+blacklist = ('jackfrued/Python-100-Days','donnemartin/system-design-primer','vinta/awesome-python', 'tensorflow/models')
 
 class Crawler:
     def __init__(self):
@@ -116,4 +116,3 @@ if __name__ == '__main__':
     while repo is not None:
         crawler.list_files()
         repo = crawler.clone_current()
-        breakpoint()

@@ -8,7 +8,7 @@ from detector import pylint_detect
 from commit_getter import get_commit
 
 
-GET_NEW_DATA = False
+GET_NEW_DATA = True
 
 
 crawler = Crawler()
@@ -16,7 +16,7 @@ outputs_dir = pathlib.Path('outputs').absolute()
 dumps_dir = crawler.dumps_dir.absolute()
 already_collected = pd.read_parquet('data.parquet')
 already_collected = list(already_collected.repo.unique())
-
+pitfalls_per_repo = pd.read_csv('pitfalls_per_repo.csv')
 def load_output(file_path):
     with open(file_path) as f:
         return json.load(f)
@@ -28,7 +28,8 @@ def add_meta(result_dict,commit, repo_name):
 def make_pylint_df():
     df = pylint_detect(str(current_repo_dir))
     df['lines_amount'] = 0
-    if len(df) > 0:
+    pitfalls_count = len(df)
+    if pitfalls_count > 0:
         relevant_files = df.filename.unique()
         for path in keep_list:
             try:
@@ -41,6 +42,13 @@ def make_pylint_df():
             df.loc[df.filename == file_name, 'lines_amount'] = amount_lines
         df['commit'] = commit
         df['repo'] = crawler.current_repo.full_name
+        df['stargazers'] = crawler.current_repo.stargazers_count
+    full_name = crawler.current_repo.full_name
+    starsgazers = crawler.current_repo.stargazers_count
+    d = {'repo':full_name, 'stargazers': starsgazers,'pitfalls': pitfalls_count}
+    global pitfalls_per_repo
+    pitfalls_per_repo = pitfalls_per_repo.append(d, ignore_index=True)
+    pitfalls_per_repo.to_csv('pitfalls_per_repo.csv',index=False)
     return df
 
 def delete_files(file_list):
@@ -83,6 +91,7 @@ if __name__ == '__main__':
                 delete_list = create_delete_list(current_repo_dir)
                 delete_files(delete_list)
                 try:
+                    print('entrando')
                     df = make_pylint_df()
                 except json.decoder.JSONDecodeError:
                     continue
