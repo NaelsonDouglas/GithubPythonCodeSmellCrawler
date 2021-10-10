@@ -15,7 +15,12 @@ from tqdm import tqdm
 
 DEBUG = True
 
-blacklist = ('jackfrued/Python-100-Days','donnemartin/system-design-primer','vinta/awesome-python', 'tensorflow/models')
+blacklist = ('jackfrued/Python-100-Days',
+    'donnemartin/system-design-primer',
+    'vinta/awesome-python',
+    'tensorflow/models',
+    'fo40225/tensorflow-windows-wheel'
+    )
 
 class Crawler:
     def __init__(self):

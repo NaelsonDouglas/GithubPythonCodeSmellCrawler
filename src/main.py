@@ -7,16 +7,13 @@ from crawler import Crawler
 from detector import pylint_detect
 from commit_getter import get_commit
 
-
 GET_NEW_DATA = True
-
 
 crawler = Crawler()
 outputs_dir = pathlib.Path('outputs').absolute()
 dumps_dir = crawler.dumps_dir.absolute()
-already_collected = pd.read_parquet('data.parquet')
-already_collected = list(already_collected.repo.unique())
 pitfalls_per_repo = pd.read_csv('pitfalls_per_repo.csv')
+already_collected = list(pitfalls_per_repo.repo.unique())
 def load_output(file_path):
     with open(file_path) as f:
         return json.load(f)
@@ -48,6 +45,8 @@ def make_pylint_df():
     d = {'repo':full_name, 'stargazers': starsgazers,'pitfalls': pitfalls_count}
     global pitfalls_per_repo
     pitfalls_per_repo = pitfalls_per_repo.append(d, ignore_index=True)
+    pitfalls_per_repo = pitfalls_per_repo.groupby('repo').head(1)
+    pitfalls_per_repo = pitfalls_per_repo.sort_values('stargazers').reset_index(drop=True)
     pitfalls_per_repo.to_csv('pitfalls_per_repo.csv',index=False)
     return df
 
