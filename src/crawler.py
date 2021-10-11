@@ -19,7 +19,8 @@ blacklist = ('jackfrued/Python-100-Days',
     'donnemartin/system-design-primer',
     'vinta/awesome-python',
     'tensorflow/models',
-    'fo40225/tensorflow-windows-wheel'
+    'fo40225/tensorflow-windows-wheel',
+    'jeffkaufman/icdiff'
     )
 
 class Crawler:
@@ -31,6 +32,10 @@ class Crawler:
         self.visited_repos = []
         self.dumps_dir = pathlib.Path('dumps')
         self.git = Git(self.dumps_dir)
+        self.blacklist = blacklist
+
+    def append_blacklist(self, new_repos):
+        self.blacklist = tuple(list(self.blacklist) + new_repos)
 
     def _make_clone_command(self, uri, repo_name):
         str_dumps_dir = str(self.dumps_dir)
@@ -67,7 +72,7 @@ class Crawler:
     def next(self):
         try:
             repo = next(self.repos)
-            if repo.full_name in blacklist:
+            if repo.full_name in self.blacklist:
                 return self.next()
         except:
             repo = None

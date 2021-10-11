@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":2},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":36},"commit":{"0":"3c8e16b8de3baf131395ae57edd479e59566a7c6"},"repo":{"0":"rushter\/MLAlgorithms"},"stargazers":{"0":8667}}

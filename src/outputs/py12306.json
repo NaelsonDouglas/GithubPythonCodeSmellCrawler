@@ -1,0 +1,1 @@
+{"type":{"0":"W"},"module":{"0":"main"},"obj":{"0":""},"lnum":{"0":4},"col":{"0":0},"filename":{"0":"main.py"},"symbol":{"0":"wildcard-import"},"text":{"0":"Wildcard import py12306.app"},"number":{"0":"W0401"},"linter":{"0":"pylint"},"lines_amount":{"0":65},"commit":{"0":"db34583c7d22c390e6210bd6c005a8794a11859a"},"repo":{"0":"pjialin\/py12306"},"stargazers":{"0":11480}}

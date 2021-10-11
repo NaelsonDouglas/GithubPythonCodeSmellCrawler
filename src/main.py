@@ -7,13 +7,15 @@ from crawler import Crawler
 from detector import pylint_detect
 from commit_getter import get_commit
 
-GET_NEW_DATA = True
+GET_NEW_DATA = False
 
 crawler = Crawler()
 outputs_dir = pathlib.Path('outputs').absolute()
 dumps_dir = crawler.dumps_dir.absolute()
 pitfalls_per_repo = pd.read_csv('pitfalls_per_repo.csv')
 already_collected = list(pitfalls_per_repo.repo.unique())
+crawler.append_blacklist(already_collected)
+
 def load_output(file_path):
     with open(file_path) as f:
         return json.load(f)
