@@ -39,7 +39,7 @@ R1732,Consider using 'with' for resource-allocating operations,gelstudios/gitfit
 R1732,Consider using 'with' for resource-allocating operations,seatgeek/fuzzywuzzy,10,benchmarks.py,af443f918eebbccff840b86fa606ac150563f466,8521,https://github.com/seatgeek/fuzzywuzzy/pull/326,,
 R1732,Consider using 'with' for resource-allocating operations,bokeh/bokeh,1144,versioneer.py,22fd44b2725cb2dd3a53b6eed04bc8d93757351c,15595,https://github.com/bokeh/bokeh/pull/11748,accepted,
 R1732,Consider using 'with' for resource-allocating operations,microsoft/cascadia-code,575,build.py,f91d08f703ee61cf4ae936b9700ca974de2748fe,17999,https://github.com/microsoft/cascadia-code/pull/584,accepted,
-R1732,Consider using 'with' for resource-allocating operations,pandas-dev/pandas,1171,versioneer.py,d30aeeba0c79fb8e4b651a8f528e87c3de8cb898,31282,https://github.com/pandas-dev/pandas/pull/44047,denied_policy,
+R1732,Consider using 'with' for resource-allocating operations,pandas-dev/pandas,1171,versioneer.py,d30aeeba0c79fb8e4b651a8f528e87c3de8cb898,31282,https://github.com/pandas-dev/pandas/pull/44047,denied due to internal policy,
 W0102,Dangerous default value [] as argument,elceef/dnstwist,194,dnstwist.py,35eff26e572e63a21bcbf1bd9d70869bf09e7d38,3048,https://github.com/elceef/dnstwist/pull/132,denied,
 W0102,Dangerous default value {} as argument,bottlepy/bottle,3926,bottle.py,71bb933649ba009cd537c2e973519d6e024c02a2,7371,https://github.com/bottlepy/bottle/pull/1355,denied,
 W0102,Dangerous default value [] as argument,espressif/esptool,2044,esptool.py,e455e7dbcdfe5ff6318522594aa6e0be743b28cf,4045,https://github.com/espressif/esptool/pull/688,"denied, intended pitfall",
