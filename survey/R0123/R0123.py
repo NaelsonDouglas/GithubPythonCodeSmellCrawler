@@ -1,5 +1,5 @@
 result = obj.find_results()
-if result == None:
+if result is 1:
     halt()
 else:
     run()
@@ -7,7 +7,7 @@ else:
 #################################
 
 result = obj.find_results()
-if result is None:
+if result == None:
     halt()
 else:
     run()
