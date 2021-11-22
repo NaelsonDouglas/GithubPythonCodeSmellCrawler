@@ -1,6 +1,6 @@
 age,Q4,Q5,Q7,Q8,Q9,Q11,Q12
 1-3,Indifferent,Wrong,Correct,Correct,Correct,Indifferent,Correct
-3.1 - 5,Correct,Correct,Correct,Correct,I do not know,Correct,Correct
+3.1 - 5,Correct,Correct,Correct,Correct,Wrong,Correct,Correct
 1-3,Correct,Correct,Correct,Correct,Wrong,Correct,Correct
 1-3,Correct,Correct,Correct,Correct,Correct,Correct,Correct
 3.1 - 5,Correct,Correct,Correct,Correct,Correct,Correct,Correct
@@ -34,18 +34,18 @@ age,Q4,Q5,Q7,Q8,Q9,Q11,Q12
 1-3,Correct,Correct,Correct,Correct,Wrong,Correct,Correct
 5.1 - 10,Correct,Correct,Correct,Correct,Correct,Correct,Correct
 1-3,Correct,Correct,Correct,Correct,Correct,Correct,Correct
-<1,Wrong,Correct,Wrong,Wrong,Correct,I do not know,Correct
+<1,Wrong,Correct,Wrong,Wrong,Correct,Wrong,Correct
 <1,Wrong,Wrong,Correct,Wrong,Wrong,Correct,Wrong
-<1,Correct,Correct,I do not know,Wrong,Wrong,Correct,Correct
-<1,Correct,Correct,I do not know,Correct,Wrong,Correct,Correct
+<1,Correct,Correct,Wrong,Wrong,Wrong,Correct,Correct
+<1,Correct,Correct,Wrong,Correct,Wrong,Correct,Correct
 <1,Correct,Wrong,Wrong,Correct,Wrong,Wrong,Correct
-1-3,Indifferent,Correct,I do not know,Correct,Wrong,Indifferent,Correct
+1-3,Indifferent,Correct,Wrong,Correct,Wrong,Indifferent,Correct
 1-3,Correct,Correct,Correct,Wrong,Wrong,Wrong,Correct
 1-3,Correct,Wrong,Correct,Correct,Wrong,Correct,Correct
 1-3,Wrong,Wrong,Correct,Wrong,Wrong,Correct,Correct
-5.1 - 10,Correct,Wrong,Correct,Correct,I do not know,I do not know,Correct
+5.1 - 10,Correct,Wrong,Correct,Correct,Wrong,Wrong,Correct
 1-3,Correct,Wrong,Wrong,Correct,Correct,Correct,Correct
 <1,Wrong,Correct,Correct,Correct,Wrong,Correct,Correct
 5.1 - 10,Correct,Correct,Correct,Correct,Correct,Correct,Correct
-3.1 - 5,Correct,Correct,Correct,Correct,Indifferent,I do not know,Correct
+3.1 - 5,Correct,Correct,Correct,Correct,Indifferent,Wrong,Correct
 3.1 - 5,Correct,Correct,Correct,Correct,Correct,Correct,Correct
