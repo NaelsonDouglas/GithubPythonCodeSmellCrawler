@@ -36,7 +36,7 @@ Ou seja: Ele cita praticamente todos os nossos "pitfalls" e alguns outros. Uma m
 
 # A dataset of non-functional bugs
 
-Em [1] o objetivo foi montar um dataset [2] de "bugs não funcionais". O paper define bugs não funcionais como "bugs que prejudicam os requisitos não funcionais da aplicação", como por exemplo: construções de código que deixa a aplicaçao lenta.
+Em [1] o objetivo foi montar um dataset [2] de "bugs não funcionais". O paper define bugs não funcionais como "bugs que prejudicam os requisitos não funcionais da aplicação", como por exemplo: construções de código que deixam a aplicaçao lenta.
 Dentro do dataset alguns casos do que chamamos de pitfalls foram classificados como bug não funcional.
 Como por exemplo, [essa entrada do dataset](https://github.com/ualberta-smr/NFBugs/tree/master/py-data/VS_test) classifica uma entrada de **C0200 consider-using-enumerate** como bug não funcional e nessa classificam [manual ~~file~~ resource handler](https://github.com/ualberta-smr/NFBugs/blob/master/py-data/peewee/problems/api-related/1/problem.yml)
 Todavia o paper analisou apenas 65 repositórios e nem todos eles foram de Python, alguns foram de Java e as análises não foram feitas no código ao todo do projeto, mas sim apenas nas modificações que alguns commits subiram para o repositório. Esta análise foi puramente manual.
