@@ -54,6 +54,21 @@ A principal contribuição deste paper para nós seria "colocar em pauta" alguns
 * Apenas 18% dos respondentes afirmaram saber o que são code smells
 * **TODO:** Este paper é bem citado, conferir se a survey foi refeita mais recentemente.
 
+# An exploration of technical debt
+* Definição de débito técnico
+* É um paper de 2012
+* Estimativa de 500 bilhões de dólares de débito técnico acumulado
+
+# Software Aging
+* Palestra do David Parnas sobre envelhecimento de software
+* Associado com entropia de software
+
+
+
+
+
+
+
 [1] [A dataset of non-functional bugs](https://sci-hub.st/https://ieeexplore.ieee.org/abstract/document/8816810/)
 
 [2] [Non-functional bugs (Github)](https://github.com/ualberta-smr/NFBugs)
@@ -66,3 +81,28 @@ A principal contribuição deste paper para nós seria "colocar em pauta" alguns
 [5] [Do Java programmers write better Python? Studying Off-Language Code Quality on Github](https://sci-hub.st/https://dl.acm.org/doi/abs/10.1145/3191697.3214341)
 
 [6] [Do developers care about code smells? An exploratory survey](https://ieeexplore.ieee.org/abstract/document/6671299)
+
+[7] [An exploration of technical debt](https://sci-hub.st/https://www.sciencedirect.com/science/article/abs/pii/S0164121213000022)
+
+[8] [Software Aging](https://www.cs.drexel.edu/~bmitchel/course/cs575/SoftwareAging.pdf)
+
+[9] [How changes affect software entropy: an empirical study](https://www.researchgate.net/profile/Marta-Cimitile/publication/241253005_How_changes_affect_software_entropy_An_empirical_study/links/00b7d5227551ea355d000000/How-changes-affect-software-entropy-An-empirical-study.pdf)
+
+[10] [A Study of C/C++ Code Weaknesses on Stack Overflow](www.google.com)
+
+# Dicas do Rohit
+* Trabalhar nas implicações: São pessoas de fora de Python estão cometendo estes pitfalls?
+    * Os cursos de Python estão indicando construções de código com qualidade?
+    * Indicar soluções para pessoas que estão cometendo os smells (Curso? usar Pylint?)
+
+# Dicas Rodrigo
+* Por que as pessoas escrevem códigos ruins em Python? Será que é porque o Stack Overflow apresenta exemplos ruins? seria um trabalho futuro.
+* "Quem está incentivando as issues? Stack Overflow? Livros? Tutoriais?"
+
+# Dicas Márcio
+* "Explicar bem o porquê de as issues serem ruins. Uma possível justificativa poderia ser tirada do próprio Pylint"
+* "Explicar os motivos das rejeições dos PR."
+
+
+
+
