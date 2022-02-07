@@ -1,0 +1,527 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<style>
+    table, td, th {
+      border: 1px solid black;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    pre.prettyprint {
+    border: none !important;
+}
+</style>
+
+Q4 C0121
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_rank(self):
+    if self.rank == None:
+        self.rank = Rank()
+
+
+
+</pre>
+<center><b>(a)</b></center>
+    </td>
+
+
+
+
+    <td>
+<pre class="prettyprint python">
+def set_rank(self):
+    if self.rank is None:
+        self.rank = Rank()
+
+
+
+</pre>
+<center><b>(b)</b></center>
+    </td>
+</tr>
+
+</table>
+
+<tr>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       13.73%
+    Prefer <b>(a)</b>                9.8%
+    Indifferent               3.92%
+    Strongly prefer <b>(b)</b>       47.06%
+    Prefer <b>(b)</b>                25.48%
+    I Do not know               0%
+    </span>
+    </pre>
+</tr>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q5 C0200
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def get_index(target, values):
+    for i in range(len(values)):
+        if values[i] == target:
+            return i
+    return -1
+</pre>
+<center><b>(a)</b></center>
+    </td>
+
+</tr>
+
+
+<tr>
+    <td>
+<pre class="prettyprint python">
+def get_index(target, values):
+    for i, value in enumerate(values):
+        if value == target:
+            return i
+    return -1
+
+</pre>
+<center><b>(b)</b></center>
+</td>
+</tr>
+
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       11.76%
+    Prefer <b>(a)</b>                11.76%
+    Indifferent               0.00%
+    Strongly prefer <b>(b)</b>       58.82%
+    Prefer <b>(b)</b>                17.65%
+    I Do not know               0%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q7 R1714
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+
+
+
+
+target in values
+
+
+
+</pre>
+
+
+<center><b>(a)</b></center>
+    </td>
+
+
+
+
+    <td>
+<pre class="prettyprint python">
+def contains_value(target, values):
+    result = False
+    for value in values:
+        if value == target:
+            result = True
+            break
+    return result
+</pre>
+<center><b>(b)</b></center>
+    </td>
+</tr>
+</table>
+
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       72.55%
+    Prefer <b>(a)</b>                11.76%
+    Indifferent               0.00%
+    Strongly prefer <b>(b)</b>       5.88%
+    Prefer <b>(b)</b>                3.92%
+    I Do not know               5.88%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q8 R1732
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def update_file(path, new_content):
+    f = open(path, 'a')
+    f.write(new_content)
+    f.close()
+</pre>
+<center><b>(a)</b></center>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+<pre class="prettyprint python">
+def update_file(path, new_content):
+    with open(path, 'a') as f:
+        f.write(new_content)
+
+
+</pre>
+<center><b>(b)</b></center>
+    </td>
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       5.88%
+    Prefer <b>(a)</b>                11.76%
+    Indifferent               0.00%
+    Strongly prefer <b>(b)</b>       74.51%
+    Prefer <b>(b)</b>                7.84%
+    I Do not know               0.00%
+    </span>
+    </pre>
+        </td>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q9 W0102
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_actions(self, actions = []):
+    self.actions = actions
+
+
+
+
+</pre>
+
+
+<center><b>(a)</b></center>
+    </td>
+
+</tr>
+
+
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_actions(self, actions = None):
+    if actions:
+        self.actions = actions
+    else:
+        self.actions = []
+</pre>
+
+<center><b>(b)</b></center>
+    </td>
+
+
+
+
+
+    
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       27.45%
+    Prefer <b>(a)</b>                15.69%
+    Indifferent               3.92%
+    Strongly prefer <b>(b)</b>       39.22%
+    Prefer <b>(b)</b>                9.80%
+    I Do not know               3.92%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q10 W0201
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+from datetime import datetime
+from decrypter import decrypt
+
+class User:
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
+
+    def authenticate(self, password):
+        result = False
+        if decrypt(password):
+            self.last_login = datetime.now()
+            result = True
+        return result
+</pre>
+
+
+<center><b>(a)</b></center>
+    </td>
+<tr>
+
+<tr>
+
+
+
+    <td>
+<pre class="prettyprint python">
+from datetime import datetime
+from decrypter import decrypt
+
+class User:
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
+        self.last_login = None
+
+    def authenticate(self, password):
+        result = False
+        if decrypt(password):
+            self.last_login = datetime.now()
+            result = True
+        return result
+</pre>
+
+<center><b>(b)</b></center>
+    </td>
+
+</tr>
+</table>
+
+
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       5.88%
+    Prefer <b>(a)</b>                5.88%
+    Indifferent               5.88%
+    Strongly prefer <b>(b)</b>       39.22%
+    Prefer <b>(b)</b>                41.18%
+    I Do not know               1.96%
+    </span>
+    </pre>
+</td>
+
+
+
+
+<br>
+
+
+
+
+
+
+Q11 W0622
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+format = data.format()
+type = None
+
+if format:
+    if isinstance(format, list):
+        format = format[0]
+    if len(format) > 10:
+        type = 'big'
+    else:
+        type = 'small'
+else:
+    data.ignore()
+    type = 'ignored'
+
+</pre>
+
+
+<center><b>(a)</b></center>
+    </td>
+
+</tr>
+
+<tr>
+
+
+    <td>
+<pre class="prettyprint python">
+data_format = data.format()
+data_type = None
+
+if data_format:
+    if isinstance(data_format, list):
+        data_format = data_format[0]
+    if len(data_format) > 10:
+        data_type = 'big'
+    else:
+        data_type = 'small'
+else:
+    data.ignore()
+    data_type = 'ignored'
+</pre>
+
+<center><b>(b)</b></center>
+    </td>
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       5.88%
+    Prefer <b>(a)</b>                7.84%
+    Indifferent               11.76%
+    Strongly prefer <b>(b)</b>       50.98%
+    Prefer <b>(b)</b>                17.65%
+    I Do not know               5.88%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q12 W0401
+<table>
+<tr>
+    <td>
+<pre class="prettyprint python">
+from collections import deque, Counter
+
+data = range(0, 100)
+as_deck = deque(data)
+as_counter = Counter(data)
+</pre>
+
+
+<center><b>(a)</b></center>
+    </td>
+
+
+</tr>
+
+<tr>
+
+    <td>
+<pre class="prettyprint python">
+from collections import *
+
+data = range(0, 100)
+as_deck = deque(data)
+as_counter = Counter(data)
+</pre>
+
+<center><b>(b)</b></center>
+    </td>
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       64.71%
+    Prefer <b>(a)</b>                29.41%
+    Indifferent               1.96%
+    Strongly prefer <b>(b)</b>       3.92%
+    Prefer <b>(b)</b>                0.00%
+    I Do not know               0.00%
+    </span>
+    </pre>
+        </td>
