@@ -7,3 +7,9 @@ def set_actions(self, actions = None):
         self.actions = actions
     else:
         self.actions = []
+
+
+
+def append(value, arg = []):
+    arg.append(value)
+    return arg
