@@ -6,7 +6,7 @@
     th {
         background-color: rgb(233, 233, 233);
         border: 1px solid black;
-        font-size: 10px;
+        font-size: 13px;
     }
     table {
       border-collapse: collapse;
@@ -18,7 +18,7 @@
     thr{
         background-color: rgb(233, 233, 233);
         border: 1px solid black;
-        font-size: 10px;
+        font-size: 13px;
         text-align: center;
     }
  
@@ -29,39 +29,47 @@
 
 
 Q4 C0121
+
+
 <table>
-<th>Original</th>
-<th>Refactored</th>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">a</td>
+</tr>
 <tr>
     <td>
 <pre class="prettyprint python">
 def set_rank(self):
     if self.rank == None:
         self.rank = Rank()
-
-
-
 </pre>
 
     </td>
 
+</tr>
 
-
-
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+    </tr>
+<tr>
     <td>
 <pre class="prettyprint python">
 def set_rank(self):
     if self.rank is None:
         self.rank = Rank()
 
-
-
 </pre>
 
-    </td>
+</td>
 </tr>
 
 </table>
+
 
 <tr>
     <pre class="prettyprint python">
@@ -93,9 +101,9 @@ Q5 C0200
 <table>
 <tr><td style="text-align: center;
 background-color: rgb(233, 233, 233);
-font-size: 10px;
+font-size: 13px;
 font-weight: bold;
-">Original</td>
+">a</td>
 </tr>
 <tr>
     <td>
@@ -113,9 +121,9 @@ def get_index(target, values):
 
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Refactored</td>
+    ">b</td>
     </tr>
 <tr>
     <td>
@@ -154,36 +162,34 @@ def get_index(target, values):
 <br>
 
 
-
-
-
-
+---new\/--
 Q7 R1714
 <table>
-<th>Original</th>
-<th>Refactored</th>
-<tr>
-    <td>
-<pre class="prettyprint python">
-
-
-
-
-target in values
-
-
-
-</pre>
-
-
-
-    </td>
-
-
-
-
-    <td>
-<pre class="prettyprint python">
+    <tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">a</td>
+    </tr>
+    <tr>
+        <td>
+    <pre class="prettyprint python">
+        target in values
+    </pre>
+    
+        </td>
+    
+    </tr>
+    
+    <tr><td style="text-align: center;
+        background-color: rgb(233, 233, 233);
+        font-size: 13px;
+        font-weight: bold;
+        ">b</td>
+        </tr>
+    <tr>
+        <td>
+    <pre class="prettyprint python">
 def contains_value(target, values):
     result = False
     for value in values:
@@ -191,25 +197,33 @@ def contains_value(target, values):
             result = True
             break
     return result
-</pre>
-
-    </td>
-</tr>
-</table>
-
-
-<td>
-    <pre class="prettyprint python">
-    <span class="nocode">
-    Strongly prefer <b>(a)</b>       72.55%
-    Prefer <b>(a)</b>                11.76%
-    Indifferent               0.00%
-    Strongly prefer <b>(b)</b>       5.88%
-    Prefer <b>(b)</b>                3.92%
-    I Do not know               5.88%
-    </span>
+    
     </pre>
-</td>
+    
+    </td>
+    </tr>
+    
+    </table>
+
+
+    <td>
+        <pre class="prettyprint python">
+        <span class="nocode">
+        Strongly prefer <b>(a)</b>       72.55%
+        Prefer <b>(a)</b>                11.76%
+        Indifferent               0.00%
+        Strongly prefer <b>(b)</b>       5.88%
+        Prefer <b>(b)</b>                3.92%
+        I Do not know               5.88%
+        </span>
+        </pre>
+    </td>
+----new/\--
+
+
+
+
+
 
 
 
@@ -229,9 +243,9 @@ Q8 R1732
 <table>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Original</td>
+    ">a</td>
 </tr>
 <tr>
     <td>
@@ -246,9 +260,9 @@ def update_file(path, new_content):
 </tr>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Refactored</td>
+    ">b</td>
 </tr>
 
 <tr>
@@ -296,9 +310,9 @@ Q9 W0102
 <table>
 <tr><td style="text-align: center;
 background-color: rgb(233, 233, 233);
-font-size: 10px;
+font-size: 13px;
 font-weight: bold;
-">Original</td>
+">a</td>
 </tr>
 <tr>
     <td>
@@ -318,9 +332,9 @@ def set_actions(self, actions = []):
 </tr>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Refactored</td>
+    ">b</td>
 </tr>
 <tr>
     <td>
@@ -375,9 +389,9 @@ Q10 W0201
 <table>
 <tr><td style="text-align: center;
 background-color: rgb(233, 233, 233);
-font-size: 10px;
+font-size: 13px;
 font-weight: bold;
-">Original</td>
+">a</td>
 </tr>
 <tr>
     <td>
@@ -404,9 +418,9 @@ class User:
 </tr>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Refactored</td>
+    ">b</td>
 </tr>
 <tr>
 
@@ -466,9 +480,9 @@ Q11 W0622
 <table>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Original</td>
+    ">a</td>
 </tr>
 <tr>
     <td>
@@ -496,9 +510,9 @@ else:
 </tr>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Refactored</td>
+    ">b</td>
 </tr>
 <tr>
 
@@ -555,9 +569,9 @@ Q12 W0401
 <table>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Original</td>
+    ">a</td>
 </tr>
 <tr>
     <td>
@@ -577,9 +591,9 @@ as_counter = Counter(data)
 </tr>
 <tr><td style="text-align: center;
     background-color: rgb(233, 233, 233);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    ">Refactored</td>
+    ">b</td>
 </tr>
 <tr>
 
@@ -610,201 +624,6 @@ as_counter = Counter(data)
     </span>
     </pre>
         </td>
-
-
-
-
-=====
-
-<table>
-<th>Original</th>
-<th>Refactored</th>
-<tr>
-   
-   
-   
-    <td style="vertical-align: top">
-<pre class="prettyprint python">
-class C:
-    def __init__(self, l=[]):
-        self.l = l
-    ...
-    
-    
-def f(c):
-    c.l.append(0)
-    return c
-
-print(vars(C()), vars(f(C())))
-</pre>
-   </td>
-
-
-    <td style="vertical-align: top">
-<pre class="prettyprint python">
-class C:
-    def __init__(self, l=None):
-        self.l = [] if l is None else l
-    ...
-
-    
-def f(c):
-    c.l.append(0)
-    return c
-
-print(vars(C()), vars(f(C())))
-</pre>
-    </td>
-
-
-</tr>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-=====
-
-
-
-
-
-
-
-
-
-<table>
-    <th>Original</th>
-    <th>Refactored</th>
-    <tr>
-       
-       
-       
-        <td style="vertical-align: top">
-    <pre class="prettyprint python">
-def append(value, collection = []):
-    collection.append(value)
-    return collection
-    </pre>
-       </td>
-    
-    
-        <td style="vertical-align: top">
-    <pre class="prettyprint python">
-def append(value, collection = None):
-    if collection is None:
-        collection = []
-    collection.append(value)
-    return collection
-    </pre>
-        </td>
-    
-    
-    </tr>
-    </table>
-
-
-
-
-
-
-
-
-
-    =====
-
-
-
-
-
-
-
-
-
-<table>
-    <th>Original</th>
-    <th>Refactored</th>
-    <tr>
-       
-       
-       
-        <td style="vertical-align: top">
-    <pre class="prettyprint python">
-values = [2, 4, 8, 16]
-for i in range(len(values)):
-    print('index: ', i)
-    print('value: ', values[i])
-    </pre>
-       </td>
-    
-    
-        <td style="vertical-align: top">
-    <pre class="prettyprint python">
-values = [2, 4, 8, 16]
-for i, value in enumerate(values):
-    print('index: ', i)
-    print('value: ', value)
-    </pre>
-        </td>
-    
-    
-    </tr>
-    </table>
-
-
-====
-
-
-
-
-<table>
-    <tr><td style="text-align: center;
-        background-color: rgb(233, 233, 233);
-        font-size: 10px;
-        font-weight: bold;
-        ">Original</td>
-    </tr>
-    <tr>
-        <td>
-    <pre class="prettyprint python">
-        if value == 1 or value == '1' or value == 'one':
-            print(value)
-    </pre>
-    
-    
-    
-        </td>
-    
-    
-    </tr>
-    <tr><td style="text-align: center;
-        background-color: rgb(233, 233, 233);
-        font-size: 10px;
-        font-weight: bold;
-        ">Refactored</td>
-    </tr>
-    <tr>
-    
-        <td>
-    <pre class="prettyprint python">
-        if value in [1, '1', 'one']:
-            print(value)
-    </pre>
-    
-    
-        </td>
-    
-    </tr>
-    </table>
-
-
 
 
 
