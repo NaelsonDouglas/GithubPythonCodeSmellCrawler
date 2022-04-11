@@ -635,7 +635,12 @@ def f(c):
     c.l.append(0)
     return c
 
+print(vars(C()))
 print(vars(C()), vars(f(C())))
+<hr>
+# Results:
+# {'l': []}
+# <b>{'l': [0]}</b> {'l': [0]}
 </pre>
    </td>
 
@@ -652,7 +657,12 @@ def f(c):
     c.l.append(0)
     return c
 
+print(vars(C()))
 print(vars(C()), vars(f(C())))
+<hr>
+# Results:
+# {'l': []}
+# <b>{'l': []}</b> {'l': [0]}
 </pre>
     </td>
 
@@ -808,3 +818,71 @@ for i, value in enumerate(values):
 
 
 
+
+    ====
+
+
+
+
+    <table>
+        <tr><td style="text-align: center;
+            background-color: rgb(233, 233, 233);
+            font-size: 10px;
+            font-weight: bold;
+            ">Original</td>
+        </tr>
+        <tr>
+            <td>
+        <pre class="prettyprint python">
+class MyViewSet():
+    def list(self):
+        return('woopsie')
+    def convert_collection(self, collection, callable=list):
+        return(callable(collection))
+
+m = MyViewSet()
+m.convert_collection((1,2,3))
+
+<tr><td><pre class="prettyprint python">#Outputs: 'woopsie'</pre></td>
+</tr>
+        </pre>
+        
+        
+        
+            </td>
+        
+        
+        </tr>
+        <tr><td style="text-align: center;
+            background-color: rgb(233, 233, 233);
+            font-size: 10px;
+            font-weight: bold;
+            ">Refactored</td>
+        </tr>
+        <tr>
+        
+            <td>
+        <pre class="prettyprint python">
+            class MyViewSet():
+def as_list(self):
+    return('woopsie')
+def convert_collection(self, collection, callable=list):
+    return(callable(collection))
+
+m = MyViewSet()
+m.convert_collection((1,2,3))
+
+<tr><td><pre class="prettyprint python">#Outputs: [1, 2, 3]</pre></td>
+        </pre>
+        
+        
+            </td>
+        
+        </tr>
+        </table>
+    
+    
+    
+    
+    
+    
