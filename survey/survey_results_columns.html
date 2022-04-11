@@ -863,11 +863,11 @@ m.convert_collection((1,2,3))
         
             <td>
         <pre class="prettyprint python">
-            class MyViewSet():
-def as_list(self):
-    return('woopsie')
-def convert_collection(self, collection, callable=list):
-    return(callable(collection))
+class MyViewSet():
+    def as_list(self):
+        return('woopsie')
+    def convert_collection(self, collection, callable=list):
+        return(callable(collection))
 
 m = MyViewSet()
 m.convert_collection((1,2,3))
