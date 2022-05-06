@@ -26,6 +26,10 @@ def get_commit(repo_path):
     commit = run_detached(repo_path, 'git rev-parse HEAD')
     return commit
 
+def checkout_repo(repo_path, commit):
+    commit = run_detached(repo_path, f'git checkout {commit}')
+    return commit
+
 if __name__ == '__main__':
     cloned_repo_path = '/home/ndc/repos/GithubPythonCodeSmellCrawler/src/dumps/pylama'
     r = get_commit(cloned_repo_path)
