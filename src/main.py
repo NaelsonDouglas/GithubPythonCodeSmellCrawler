@@ -2,6 +2,7 @@ import pathlib
 import json
 import pandas as pd
 from crawler import Crawler
+from static_crawler import StaticCrawler
 from detector import pylint_detect
 from commit_getter import get_commit, count_contributors, get_first_commit_date
 

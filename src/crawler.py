@@ -103,13 +103,15 @@ class Crawler:
         current_repo_path = self.get_current_repo_path()
         if self.current_uri != None:
             if not current_repo_path.exists():
-                repo_name = self.current_repo.name
-                clone_cmd = self._make_clone_command(self.current_uri,repo_name)
-                process = subprocess.run(clone_cmd.split(), stdout=subprocess.PIPE)
-                #self.git.clone(self.current_uri)
+                self.clone(self.current_uri, self.current_repo.name)
             if self.current_repo._rawData['fork']:
                 return self.clone_current()
             return self.current_repo
+
+    def clone(self, uri, repo_name):
+        clone_cmd = self._make_clone_command(uri, repo_name)
+        process = subprocess.run(clone_cmd.split(), stdout=subprocess.PIPE)
+
 
     def list_files(self, extension='py'):
         files_list = [i for i in self.dumps_dir.rglob(f'*.{extension}')]
