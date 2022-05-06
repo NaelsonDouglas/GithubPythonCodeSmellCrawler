@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":3},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":117},"commit":{"0":"aad92c9d5adf1ca117feb75fff985052c66bfea6"},"repo":{"0":"mitmproxy\/mitmproxy"},"stargazers":{"0":24844}}

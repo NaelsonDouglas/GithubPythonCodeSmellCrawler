@@ -29,7 +29,6 @@ def error_to_dict(e):
 
 def pylint_detect(my_path):
     command = f'pylint --output-format=json {my_path}/*.py > temp.json'
-    #command = f'find . -type f -wholename \'{my_path}/*.py\' | xargs pylint --output-format=json > temp.json'
     current_path = os.getcwd()
     os.chdir(my_path)
     codes = 'W0201,W0221,W0401,R0801,C1801,W0102,W0622,R0123,R0912,R1707,R1710,R1714,C0121,C0200,R1732'
@@ -48,7 +47,6 @@ def pylint_detect(my_path):
                 )
     if len(df) > 0:
         df.type = df.type.apply(lambda x : x[0].upper())
-    if len(df) > 0:
         df.filename = df.filename.apply(lambda x: x.replace('dumps/',''))
     return df
 
@@ -62,8 +60,9 @@ def pylama_detect(my_path):
 
 def detect(my_path):
     pylint = pylint_detect(my_path)
-    pylama = pylama_detect(my_path)
-    result = pd.concat([pylint,pylama])
+    #pylama = pylama_detect(my_path)
+    #result = pd.concat([pylint,pylama])
+    result = pylint
     result = result.reset_index(drop=True)
     return result
 

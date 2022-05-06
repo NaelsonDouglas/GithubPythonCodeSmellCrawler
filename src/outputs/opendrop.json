@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":2},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":53},"commit":{"0":"cbc7ca46a75bb2da4af9d406732ddf2192578388"},"repo":{"0":"seemoo-lab\/opendrop"},"stargazers":{"0":5338}}

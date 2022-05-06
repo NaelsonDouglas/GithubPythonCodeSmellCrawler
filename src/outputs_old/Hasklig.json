@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"addSVGtable"},"obj":{"0":"setIDvalue"},"lnum":{"0":33},"col":{"0":4},"filename":{"0":"addSVGtable.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'id'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":201},"commit":{"0":"5344dc892cf93d5dedd7be1efd72a62adda90436"},"repo":{"0":"i-tu\/Hasklig"}}

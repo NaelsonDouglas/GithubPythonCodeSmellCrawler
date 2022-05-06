@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":7},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":86},"commit":{"0":"c49ca6fef8ffa95a0ac7ce698e0b752ac91f6d42"},"repo":{"0":"1adrianb\/face-alignment"}}

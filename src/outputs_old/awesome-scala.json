@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"add-metadata"},"obj":{"0":"warn"},"lnum":{"0":36},"col":{"0":9},"filename":{"0":"add-metadata.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'str'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":70},"commit":{"0":"91be3c53527cbffeb55dd7074f4543c944d94dcd"},"repo":{"0":"lauris\/awesome-scala"}}

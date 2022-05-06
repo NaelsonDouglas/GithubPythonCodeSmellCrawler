@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":3},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in '__name__'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":80},"commit":{"0":"02d356ef12d83689a287f15efaed166dd9c56137"},"repo":{"0":"lbryio\/lbry-sdk"},"stargazers":{"0":7142}}

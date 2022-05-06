@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"sotabench"},"obj":{"0":""},"lnum":{"0":58},"col":{"0":12},"filename":{"0":"sotabench.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'input'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":72},"commit":{"0":"7e8b0d312162f335785fb5dcfa1df29a75a1783a"},"repo":{"0":"lukemelas\/EfficientNet-PyTorch"}}

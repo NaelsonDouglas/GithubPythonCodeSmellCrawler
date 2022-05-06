@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":2},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":143},"commit":{"0":"46b9914995e6c8c7d227b46f2eaeef2d4600580f"},"repo":{"0":"NicolasHug\/Surprise"},"stargazers":{"0":5046}}

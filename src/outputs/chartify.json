@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":21},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'open'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":116},"commit":{"0":"5ac3a88e54cf620389741f396cc19d60fe032822"},"repo":{"0":"spotify\/chartify"},"stargazers":{"0":3023}}

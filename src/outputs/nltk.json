@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":17},"col":{"0":4},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'ascii'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":126},"commit":{"0":"253816470957238630eba998be971ddce6e94f2d"},"repo":{"0":"nltk\/nltk"},"stargazers":{"0":10161}}

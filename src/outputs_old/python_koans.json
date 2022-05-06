@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"scent"},"obj":{"0":""},"lnum":{"0":1},"col":{"0":0},"filename":{"0":"scent.py"},"symbol":{"0":"wildcard-import"},"text":{"0":"Wildcard import sniffer.api"},"number":{"0":"W0401"},"linter":{"0":"pylint"},"lines_amount":{"0":13},"commit":{"0":"45738bbeccbd404ce342d7e4f7bb9234bda0bf8c"},"repo":{"0":"gregmalcolm\/python_koans"}}

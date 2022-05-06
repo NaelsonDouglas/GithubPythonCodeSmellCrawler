@@ -1,1 +1,0 @@
-{"type":{"0":"W"},"module":{"0":"setup"},"obj":{"0":"proc_data_files"},"lnum":{"0":74},"col":{"0":8},"filename":{"0":"setup.py"},"symbol":{"0":"redefined-builtin"},"text":{"0":"Redefining built-in 'dir'"},"number":{"0":"W0622"},"linter":{"0":"pylint"},"lines_amount":{"0":169},"commit":{"0":"d89719c7409528006a65378c3e6ae1a4b2666ec0"},"repo":{"0":"ansible\/awx"}}

@@ -20,7 +20,9 @@ blacklist = ('jackfrued/Python-100-Days',
     'vinta/awesome-python',
     'tensorflow/models',
     'fo40225/tensorflow-windows-wheel',
-    'jeffkaufman/icdiff'
+    'jeffkaufman/icdiff',
+    'babysor/MockingBird',
+    'OpenBB-finance/OpenBBTerminal'
     )
 
 class Crawler:

@@ -1,1 +1,0 @@
-{"type":{"0":"R"},"module":{"0":"setup"},"obj":{"0":""},"lnum":{"0":114},"col":{"0":0},"filename":{"0":"setup.py"},"symbol":{"0":"trailing-comma-tuple"},"text":{"0":"Disallow trailing comma tuple"},"number":{"0":"R1707"},"linter":{"0":"pylint"},"lines_amount":{"0":131},"commit":{"0":"d7c57abc7cb66e9c910a844f15d4536866da3310"},"repo":{"0":"donnemartin\/gitsome"}}
