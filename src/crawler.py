@@ -111,6 +111,8 @@ class Crawler:
         clone_cmd = self._make_clone_command(uri, repo_name)
         process = subprocess.run(clone_cmd.split(), stdout=subprocess.PIPE)
 
+    def delete_current_dir(self):
+        breakpoint()
 
     def list_files(self, extension='py'):
         files_list = [i for i in self.dumps_dir.rglob(f'*.{extension}')]
