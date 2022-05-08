@@ -25,7 +25,12 @@ def count_lines(repo_dir):
     nof_lines = 0
     for source in sources:
         if not source.is_dir():
-            nof_lines = nof_lines + len(source.open().readlines())
+            try:
+                text = source.open(errors='ignore')
+                text = text.readlines()
+            except:
+                breakpoint()
+            nof_lines = nof_lines + len(text)
     return nof_lines
 
 def get_repo_metadata(crawler):
