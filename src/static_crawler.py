@@ -1,6 +1,6 @@
 from crawler import Crawler
 import pandas as pd
-from github import Github
+import github
 from configparser import ConfigParser
 from commit_getter import checkout_repo
 import pathlib
@@ -11,6 +11,10 @@ configs.read('configs.ini')
 commits = dict(pd.read_parquet('data.parquet')[['repo','commit']].values)
 warnings = pd.read_csv('warnings_per_repo.csv')[['repo']]
 warnings['commit'] = warnings.repo.apply(lambda x: commits.get(x))
+meta = pd.read_csv('meta.csv')
+warnings = warnings.loc[~warnings.repo.isin(meta.repo)]
+warnings = warnings.sample(len(warnings))
+
 
 class StaticCrawler(Crawler):
     def __init__(self):
@@ -22,7 +26,6 @@ class StaticCrawler(Crawler):
 
     def next(self):
         super().next()
-        print('changed the commit')
         self.current_commit = next(self.commits)
 
     def clone_current(self):
@@ -34,9 +37,13 @@ if __name__ == '__main__':
     from main import get_repo_metadata, persist_metadata
     c = StaticCrawler()
     c.next()
-    while c.current_repo is not None:
-        c.clone_current()
-        metadata = get_repo_metadata(c)
-        c.next()
-        c.clear_directory()
-        persist_metadata(metadata, 'meta.csv')
+    for _ in range(len(warnings)): #Not using a while loop in order to ease some debugs
+        if c.current_repo is not None and c.current_repo.full_name is not None:
+            c.clone_current()
+            metadata = get_repo_metadata(c)
+            c.next()
+            c.clear_directory()
+            persist_metadata(metadata, 'meta.csv')
+        else:
+            print(f'skiping {c.current_repo}')
+            c.next()

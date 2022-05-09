@@ -28,8 +28,8 @@ def count_lines(repo_dir):
             try:
                 text = source.open(errors='ignore')
                 text = text.readlines()
-            except:
-                breakpoint()
+            except AttributeError:
+                pass
             nof_lines = nof_lines + len(text)
     return nof_lines
 
