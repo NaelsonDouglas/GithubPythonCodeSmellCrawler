@@ -1,13 +1,7 @@
-target in values
+if value in [1,2,4]:
+    print('Ok')
 
 ##########
 
-
-def contains_value(target, values):
-    result = False
-    for value in values:
-        if value == target:
-            result = True
-            break
-    return result
-
+if value == 1 or value == 2 or value == 4:
+    print('Ok')
