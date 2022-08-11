@@ -1,0 +1,898 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+    th {
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    pre.prettyprint {
+    border: none !important;
+    }
+    thr{
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+    }
+ 
+</style>
+
+
+
+
+
+Q4 C0121
+
+
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_rank(self):
+    if self.rank is None:
+        self.rank = Rank()
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_rank(self):
+    if self.rank == None:
+        self.rank = Rank()
+</pre>
+
+</td>
+</tr>
+
+</table>
+
+
+<tr>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       13.73%
+    Prefer <b>(a)</b>                9.8%
+    Indifferent               3.92%
+    Strongly prefer <b>(b)</b>       47.06%
+    Prefer <b>(b)</b>                25.48%
+    I Do not know               0%
+    </span>
+    </pre>
+</tr>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q5 C0200
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def get_index(target, values):
+    for i in range(len(values)):
+        if values[i] == target:
+            return i
+    return -1
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def get_index(target, values):
+    for i, value in enumerate(values):
+        if value == target:
+            return i
+    return -1
+
+</pre>
+
+</td>
+</tr>
+
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       11.76%
+    Prefer <b>(a)</b>                11.76%
+    Indifferent               0.00%
+    Strongly prefer <b>(b)</b>       58.82%
+    Prefer <b>(b)</b>                17.65%
+    I Do not know               0%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+<br>
+
+
+---new\/--
+Q7 R1714
+<table>
+    <tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">a</td>
+    </tr>
+    <tr>
+        <td>
+    <pre class="prettyprint python">
+if value in [1,2,4]:
+    print('Ok')
+    </pre>
+    
+        </td>
+    
+    </tr>
+    
+    <tr><td style="text-align: center;
+        background-color: rgb(233, 233, 233);
+        font-size: 13px;
+        font-weight: bold;
+        ">b</td>
+        </tr>
+    <tr>
+        <td>
+    <pre class="prettyprint python">
+if value == 1 or value == 2 or value == 4:
+    print('Ok')
+    </pre>
+    
+    </td>
+    </tr>
+    
+    </table>
+
+
+    <td>
+        <pre class="prettyprint python">
+        <span class="nocode">
+        Strongly prefer <b>(a)</b>       72.55%
+        Prefer <b>(a)</b>                11.76%
+        Indifferent               0.00%
+        Strongly prefer <b>(b)</b>       5.88%
+        Prefer <b>(b)</b>                3.92%
+        I Do not know               5.88%
+        </span>
+        </pre>
+    </td>
+----new/\--
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q8 R1732
+<table>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def update_file(path, new_content):
+    with open(path, 'a') as f:
+        f.write(new_content)
+</pre>
+
+    </td>
+</tr>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+</tr>
+
+<tr>
+
+    <td>
+<pre class="prettyprint python">
+def update_file(path, new_content):
+    f = open(path, 'a')
+    f.write(new_content)
+    f.close()
+</pre>
+
+    </td>
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       5.88%
+    Prefer <b>(a)</b>                11.76%
+    Indifferent               0.00%
+    Strongly prefer <b>(b)</b>       74.51%
+    Prefer <b>(b)</b>                7.84%
+    I Do not know               0.00%
+    </span>
+    </pre>
+        </td>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q9 W0102
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_actions(self, actions = []):
+    self.actions = actions
+
+
+
+
+</pre>
+
+
+
+    </td>
+
+</tr>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def set_actions(self, actions = None):
+    if actions:
+        self.actions = actions
+    else:
+        self.actions = []
+</pre>
+
+
+    </td>
+
+
+
+
+
+    
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       27.45%
+    Prefer <b>(a)</b>                15.69%
+    Indifferent               3.92%
+    Strongly prefer <b>(b)</b>       39.22%
+    Prefer <b>(b)</b>                9.80%
+    I Do not know               3.92%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q10 W0201
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+from datetime import datetime
+from decrypter import decrypt
+
+class User:
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
+
+    def authenticate(self, password):
+        result = False
+        if decrypt(password):
+            self.last_login = datetime.now()
+            result = True
+        return result
+</pre>
+
+
+
+    </td>
+</tr>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+</tr>
+<tr>
+
+
+
+    <td>
+<pre class="prettyprint python">
+from datetime import datetime
+from decrypter import decrypt
+
+class User:
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
+        self.last_login = None
+
+    def authenticate(self, password):
+        result = False
+        if decrypt(password):
+            self.last_login = datetime.now()
+            result = True
+        return result
+</pre>
+
+
+    </td>
+
+</tr>
+</table>
+
+
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       5.88%
+    Prefer <b>(a)</b>                5.88%
+    Indifferent               5.88%
+    Strongly prefer <b>(b)</b>       39.22%
+    Prefer <b>(b)</b>                41.18%
+    I Do not know               1.96%
+    </span>
+    </pre>
+</td>
+
+
+
+
+<br>
+
+
+
+
+
+
+Q11 W0622
+<table>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+format = data.format()
+type = None
+
+if format:
+    if isinstance(format, list):
+        format = format[0]
+    if len(format) > 10:
+        type = 'big'
+    else:
+        type = 'small'
+else:
+    data.ignore()
+    type = 'ignored'
+
+</pre>
+
+
+
+    </td>
+
+</tr>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+</tr>
+<tr>
+
+
+    <td>
+<pre class="prettyprint python">
+data_format = data.format()
+data_type = None
+
+if data_format:
+    if isinstance(data_format, list):
+        data_format = data_format[0]
+    if len(data_format) > 10:
+        data_type = 'big'
+    else:
+        data_type = 'small'
+else:
+    data.ignore()
+    data_type = 'ignored'
+</pre>
+
+
+    </td>
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       5.88%
+    Prefer <b>(a)</b>                7.84%
+    Indifferent               11.76%
+    Strongly prefer <b>(b)</b>       50.98%
+    Prefer <b>(b)</b>                17.65%
+    I Do not know               5.88%
+    </span>
+    </pre>
+</td>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Q12 W0401
+<table>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">a</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+from collections import deque, Counter
+
+data = range(0, 100)
+as_deck = deque(data)
+as_counter = Counter(data)
+</pre>
+
+
+
+    </td>
+
+
+</tr>
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">b</td>
+</tr>
+<tr>
+
+    <td>
+<pre class="prettyprint python">
+from collections import *
+
+data = range(0, 100)
+as_deck = deque(data)
+as_counter = Counter(data)
+</pre>
+
+
+    </td>
+
+</tr>
+</table>
+
+<td>
+    <pre class="prettyprint python">
+    <span class="nocode">
+    Strongly prefer <b>(a)</b>       64.71%
+    Prefer <b>(a)</b>                29.41%
+    Indifferent               1.96%
+    Strongly prefer <b>(b)</b>       3.92%
+    Prefer <b>(b)</b>                0.00%
+    I Do not know               0.00%
+    </span>
+    </pre>
+        </td>
+
+
+
+<<<<<<< HEAD
+
+=====
+
+<table>
+<th>Original</th>
+<th>Refactored</th>
+<tr>
+   
+   
+   
+    <td style="vertical-align: top">
+<pre class="prettyprint python">
+class C:
+    def __init__(self, l=[]):
+        self.l = l
+    ...
+    
+    
+def f(c):
+    c.l.append(0)
+    return c
+
+print(vars(C()))
+print(vars(C()), vars(f(C())))
+<hr>
+# Results:
+# {'l': []}
+# <b>{'l': [0]}</b> {'l': [0]}
+</pre>
+   </td>
+
+
+    <td style="vertical-align: top">
+<pre class="prettyprint python">
+class C:
+    def __init__(self, l=None):
+        self.l = [] if l is None else l
+    ...
+
+    
+def f(c):
+    c.l.append(0)
+    return c
+
+print(vars(C()))
+print(vars(C()), vars(f(C())))
+<hr>
+# Results:
+# {'l': []}
+# <b>{'l': []}</b> {'l': [0]}
+</pre>
+    </td>
+
+
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+=====
+
+
+
+
+
+
+
+
+
+<table>
+    <th>Original</th>
+    <th>Refactored</th>
+    <tr>
+       
+       
+       
+        <td style="vertical-align: top">
+    <pre class="prettyprint python">
+def append(value, collection = []):
+    collection.append(value)
+    return collection
+    </pre>
+       </td>
+    
+    
+        <td style="vertical-align: top">
+    <pre class="prettyprint python">
+def append(value, collection = None):
+    if collection is None:
+        collection = []
+    collection.append(value)
+    return collection
+    </pre>
+        </td>
+    
+    
+    </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+    =====
+
+
+
+
+
+
+
+
+
+<table>
+    <th>Original</th>
+    <th>Refactored</th>
+    <tr>
+       
+       
+       
+        <td style="vertical-align: top">
+    <pre class="prettyprint python">
+values = [2, 4, 8, 16]
+for i in range(len(values)):
+    print('index: ', i)
+    print('value: ', values[i])
+    </pre>
+       </td>
+    
+    
+        <td style="vertical-align: top">
+    <pre class="prettyprint python">
+values = [2, 4, 8, 16]
+for i, value in enumerate(values):
+    print('index: ', i)
+    print('value: ', value)
+    </pre>
+        </td>
+    
+    
+    </tr>
+    </table>
+
+
+====
+
+
+
+
+<table>
+    <tr><td style="text-align: center;
+        background-color: rgb(233, 233, 233);
+        font-size: 10px;
+        font-weight: bold;
+        ">Original</td>
+    </tr>
+    <tr>
+        <td>
+    <pre class="prettyprint python">
+        if value == 1 or value == '1' or value == 'one':
+            print(value)
+    </pre>
+    
+    
+    
+        </td>
+    
+    
+    </tr>
+    <tr><td style="text-align: center;
+        background-color: rgb(233, 233, 233);
+        font-size: 10px;
+        font-weight: bold;
+        ">Refactored</td>
+    </tr>
+    <tr>
+    
+        <td>
+    <pre class="prettyprint python">
+        if value in [1, '1', 'one']:
+            print(value)
+    </pre>
+    
+    
+        </td>
+    
+    </tr>
+    </table>
+
+
+
+
+
+
+    ====
+
+
+
+
+    <table>
+        <tr><td style="text-align: center;
+            background-color: rgb(233, 233, 233);
+            font-size: 10px;
+            font-weight: bold;
+            ">Original</td>
+        </tr>
+        <tr>
+            <td>
+        <pre class="prettyprint python">
+ 1| class MyViewSet():
+ 2|     def list(self):
+ 3|         return 'woopsie'
+ 4|     def convert_collection(self, collection, callable=list):
+ 5|         return(callable(collection))
+ 6| m = MyViewSet()
+ 7| m.convert_collection([1,2,3], tuple)
+ 8| (1, 2, 3)
+ 9| m.convert_collection((1,2,3), list)
+10| [1, 2, 3]
+11| m.convert_collection((1,2,3))
+12| 'woopsie'
+</tr>
+        </pre>
+        
+        
+        
+            </td>
+        
+        
+        </tr>
+        <tr><td style="text-align: center;
+            background-color: rgb(233, 233, 233);
+            font-size: 10px;
+            font-weight: bold;
+            ">Refactored</td>
+        </tr>
+        <tr>
+        
+            <td>
+        <pre class="prettyprint python">
+ 1| class MyViewSet():
+ 2|     def as_list(self):
+ 3|         return 'woopsie'
+ 4|     def convert_collection(self, collection, callable=list):
+ 5|         return(callable(collection))
+ 6| m = MyViewSet()
+ 7| m.convert_collection([1,2,3], tuple)
+ 8| (1, 2, 3)
+ 9| m.convert_collection((1,2,3), list)
+10| [1, 2, 3]
+11| m.convert_collection((1,2,3))
+12| [1, 2, 3]</pre>
+
+        
+            </td>
+        
+        </tr>
+        </table>
+    
+    
+    
+    
+    
+    
