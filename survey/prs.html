@@ -1,0 +1,321 @@
+<br><br><br><br><br>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+    th {
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    pre.prettyprint {
+    border: none !important;
+    }
+    thr{
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+    }
+</style>
+<br><br><br><br><br><br>
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">Original</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def get_main_app(argv=[]):
+    ...
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">Refactored</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+def get_main_app(argv=None):
+    if not argv:
+        argv = []
+    ...
+</pre>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+    th {
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    pre.prettyprint {
+    border: none !important;
+    }
+    thr{
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+    }
+</style>
+<br><br><br><br><br><br>
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">Original</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+assert (mode == tf.estimator.ModeKeys.TRAIN or mode == tf.estimator.ModeKeys.EVAL)
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">Refactored</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+assert mode in [tf.estimator.ModeKeys.TRAIN, tf.estimator.ModeKeys.EVAL]
+</pre>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+    th {
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    pre.prettyprint {
+    border: none !important;
+    }
+    thr{
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+    }
+</style>
+<br><br><br><br><br><br>
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">Original</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+for i in range(0, len(outputs)):
+    try:
+        torch.testing.assert_allclose(outputs[i], ort_outs[i], ...)
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">Refactored</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+for i, element in enumerate(outputs):
+    try
+        torch.testing.assert_allclose(element, ort_outs[i], ...)
+</pre>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+    th {
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    pre.prettyprint {
+    border: none !important;
+    }
+    thr{
+        background-color: rgb(233, 233, 233);
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+    }
+</style>
+<br><br><br><br><br><br>
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">Original</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+if cont_seg.size == False or styl_seg.size == False:
+    ...
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">Refactored</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+if cont_seg.size is False or styl_seg.size is False:
+    ...
+</pre>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<table>
+<tr><td style="text-align: center;
+background-color: rgb(233, 233, 233);
+font-size: 13px;
+font-weight: bold;
+">Original</td>
+</tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+config = yaml.load(open(INPUT_DIR/"stat.yaml"), Loader=yaml.SafeLoader)
+</pre>
+
+    </td>
+
+</tr>
+
+<tr><td style="text-align: center;
+    background-color: rgb(233, 233, 233);
+    font-size: 13px;
+    font-weight: bold;
+    ">Refactored</td>
+    </tr>
+<tr>
+    <td>
+<pre class="prettyprint python">
+with open(INPUT_DIR/"stat.yaml") as f:
+    config = yaml.load(f, Loader=yaml.SafeLoader)
+</pre>
+
+</td>
+</tr>
+
+</table>
+
